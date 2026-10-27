@@ -53,7 +53,17 @@ export default function Hero() {
         style={reduce ? undefined : { y: imageY }}
         className="absolute right-5 top-28 -z-10 w-[48vw] max-w-[28rem] md:right-[7vw] md:w-[30vw]"
       >
-        <ImageSlot image={hero.image} className="aspect-[3/4] w-full" priority />
+        <motion.div
+          initial={
+            reduce
+              ? false
+              : { opacity: 0, clipPath: "inset(0 0 100% 0)", scale: 1.04 }
+          }
+          animate={{ opacity: 1, clipPath: "inset(0 0 0% 0)", scale: 1 }}
+          transition={{ duration: 1.2, ease: EASE, delay: 0.2 }}
+        >
+          <ImageSlot image={hero.image} className="aspect-[3/4] w-full" priority />
+        </motion.div>
       </motion.div>
 
       <div className="mx-auto mt-auto flex w-full max-w-[90rem] flex-col pt-24">
