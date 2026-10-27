@@ -29,6 +29,26 @@
 }
 
 @layer components {
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .marquee-track {
+    animation: marquee 40s linear infinite;
+  }
+
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none;
+    }
+  }
+
   /* Fine film grain used on photo placeholders so flat tones feel printed, not digital. */
   .grain::after {
     content: "";

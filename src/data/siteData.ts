@@ -85,7 +85,7 @@ export const hero = {
   tagline:
     "Contemporary Indian food, considered drinks and long evenings in Hyderabad.",
   image: {
-    src: "/images/hero.jpg",
+    src: "/images/hero_HD.jpg",
     alt: "One8 Commune Hyderabad interior and illuminated sign",
     tone: "olive",
   } satisfies ImageAsset,
@@ -108,12 +108,12 @@ export const story = {
   ],
   note: "Concept copy. Replace with the restaurant's own words.",
   imageMain: {
-    src: "/images/table.jpg",
+    src: "/images/table_HD.jpg",
     alt: "Dining booth and table in the restaurant",
     tone: "charcoal",
   } satisfies ImageAsset,
   imageSecondary: {
-    src: "/images/table-3.jpg",
+    src: "/images/table-3_HD.jpg",
     alt: "Restaurant bar beneath woven pendant lights",
     tone: "umber",
   } satisfies ImageAsset,
@@ -248,7 +248,7 @@ export const gallery = {
     {
       span: "col-span-2 row-span-2 md:col-span-7 md:row-span-4",
       image: {
-        src: "/images/table-1.jpg",
+        src: "/images/table-1_HD.jpg",
         alt: "Dining table beneath a woven canopy",
         tone: "charcoal",
       },
@@ -256,7 +256,7 @@ export const gallery = {
     {
       span: "md:col-span-5 md:row-span-2",
       image: {
-        src: "/images/table.jpg",
+        src: "/images/table-2_HD.jpg",
         alt: "Booth seating and a round dining table",
         tone: "olive",
       },
@@ -264,7 +264,7 @@ export const gallery = {
     {
       span: "md:col-span-5 md:row-span-2",
       image: {
-        src: "/images/table-3.jpg",
+        src: "/images/table-3_HD.jpg",
         alt: "Lounge and bar with woven pendant lights",
         tone: "umber",
       },

@@ -4,7 +4,9 @@ import Footer from "./components/Footer";
 import Gallery from "./components/Gallery";
 import Hero from "./components/Hero";
 import Location from "./components/Location";
+import Marquee from "./components/Marquee";
 import Navbar from "./components/Navbar";
+import ScrollProgress from "./components/ScrollProgress";
 import Reserve from "./components/Reserve";
 import Story from "./components/Story";
 
@@ -17,9 +19,11 @@ export default function App() {
       >
         Skip to content
       </a>
+      <ScrollProgress />
       <Navbar />
       <main id="main">
         <Hero />
+        <Marquee />
         <Story />
         <FoodDrinks />
         <Gallery />

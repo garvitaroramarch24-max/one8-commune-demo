@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Instagram, X } from "lucide-react";
 import { gallery, social } from "../data/siteData";
+import { EASE } from "../lib/motion";
 import ImageSlot from "./ImageSlot";
 
 export default function Gallery() {
@@ -62,16 +63,25 @@ export default function Gallery() {
 
         <ul className="mt-14 grid auto-rows-[11rem] grid-cols-2 gap-3 md:auto-rows-[9.5rem] md:grid-cols-12 md:gap-4">
           {gallery.items.map((item, index) => (
-            <li key={item.image.alt} className={item.span}>
+            <motion.li
+              key={item.image.alt}
+              className={item.span}
+              initial={reduce ? false : { opacity: 0, scale: 0.94 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "0px 0px -8% 0px" }}
+              transition={{ duration: 0.8, ease: EASE, delay: (index % 4) * 0.08 }}
+            >
               <button
                 type="button"
                 onClick={() => setOpenIndex(index)}
                 aria-label={`Open photo: ${item.image.alt}`}
-                className="group block h-full w-full"
+                className="group block h-full w-full overflow-hidden"
               >
-                <ImageSlot image={item.image} className="h-full w-full" />
+                <div className="h-full w-full transition-transform duration-700 ease-out group-hover:scale-105">
+                  <ImageSlot image={item.image} className="h-full w-full" />
+                </div>
               </button>
-            </li>
+            </motion.li>
           ))}
         </ul>
 

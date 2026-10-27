@@ -77,10 +77,16 @@ export default function FoodDrinks() {
               </div>
 
               <ul className="divide-y divide-cream-100/10 md:col-span-7">
-                {category.items.map((item) => (
-                  <li key={item.name} className="flex items-baseline justify-between gap-6 py-7 first:pt-0">
-                    <div>
-                      <h3 className="font-display text-3xl font-normal leading-tight text-cream-50">
+                {category.items.map((item, index) => (
+                  <motion.li
+                    key={item.name}
+                    initial={reduce ? false : { opacity: 0, x: 24 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, ease: EASE, delay: 0.1 + index * 0.07 }}
+                    className="group flex items-baseline justify-between gap-6 py-7 first:pt-0"
+                  >
+                    <div className="transition-transform duration-500 ease-out group-hover:translate-x-2">
+                      <h3 className="font-display text-3xl font-normal leading-tight text-cream-50 transition-colors duration-300 group-hover:text-gold-300">
                         {item.name}
                       </h3>
                       <p className="mt-2 max-w-md text-sm leading-relaxed text-cream-400">
@@ -88,7 +94,7 @@ export default function FoodDrinks() {
                       </p>
                     </div>
                     <span className="shrink-0 font-display text-xl text-gold-300">{item.price}</span>
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
             </motion.div>
